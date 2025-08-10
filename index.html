@@ -39,7 +39,7 @@
         .nav-link:hover {
             color: #C0A080;
         }
-        .tab-btn.active, .monthly-tab-btn.active {
+        .tab-btn.active {
             border-color: #C0A080;
             color: #C0A080;
             background-color: #FDFBF7;
@@ -66,7 +66,6 @@
                 <a href="#strengths" class="nav-link text-gray-600">独自の強み</a>
                 <a href="#investment" class="nav-link text-gray-600">成長計画</a>
                 <a href="#vision" class="nav-link text-gray-600">未来像</a>
-                <a href="#appendix" class="nav-link text-gray-600">補足資料</a>
             </nav>
         </div>
     </header>
@@ -88,107 +87,15 @@
                     <h3 class="text-3xl font-bold text-gray-800">事業実績：驚異的なV字回復</h3>
                     <p class="text-gray-600 mt-2">設立からわずか3期で赤字を解消し、高収益体制への転換を証明しました。</p>
                 </div>
-                <div class="bg-white p-4 sm:p-8 rounded-2xl shadow-lg mb-12">
+                <div class="bg-white p-4 sm:p-8 rounded-2xl shadow-lg">
                     <div class="chart-container">
                         <canvas id="financialsChart"></canvas>
                     </div>
                 </div>
-
-                <!-- New Monthly Financials Section -->
-                <div class="text-center mb-8">
-                    <h3 class="text-3xl font-bold text-gray-800">月次財務状況：詳細な成長軌跡</h3>
-                    <p class="text-gray-600 mt-2">直近の月次データから、堅実な経営と成長の勢いをご確認ください。（2024年10月〜2025年3月）</p>
-                </div>
-                <div class="bg-white p-4 sm:p-8 rounded-2xl shadow-lg">
-                    <div class="mb-8 flex flex-wrap justify-center border-b border-gray-200">
-                        <button class="monthly-tab-btn active text-lg font-bold py-3 px-6 border-b-2 border-transparent" data-tab="monthly-pl">月次損益計算書</button>
-                        <button class="monthly-tab-btn text-lg font-bold py-3 px-6 border-b-2 border-transparent text-gray-500" data-tab="monthly-bs">月次貸借対照表</button>
-                        <button class="monthly-tab-btn text-lg font-bold py-3 px-6 border-b-2 border-transparent text-gray-500" data-tab="monthly-cf">月次キャッシュフロー計算書</button>
-                    </div>
-
-                    <div id="monthly-tab-content" class="overflow-x-auto">
-                        <div id="monthly-pl" class="monthly-tab-pane">
-                            <table class="min-w-full bg-white border border-gray-200 rounded-md">
-                                <thead>
-                                    <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
-                                        <th class="py-3 px-6 text-left">項目</th>
-                                        <th class="py-3 px-6 text-right">10月</th>
-                                        <th class="py-3 px-6 text-right">11月</th>
-                                        <th class="py-3 px-6 text-right">12月</th>
-                                        <th class="py-3 px-6 text-right">1月</th>
-                                        <th class="py-3 px-6 text-right">2月</th>
-                                        <th class="py-3 px-6 text-right">3月</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-gray-700 text-sm">
-                                    <tr><td class="py-3 px-6 text-left font-semibold">売上高</td><td class="py-3 px-6 text-right">750,000</td><td class="py-3 px-6 text-right">800,000</td><td class="py-3 px-6 text-right">900,000</td><td class="py-3 px-6 text-right">1,000,000</td><td class="py-3 px-6 text-right">1,200,000</td><td class="py-3 px-6 text-right">1,400,000</td></tr>
-                                    <tr><td class="py-3 px-6 text-left">売上原価</td><td class="py-3 px-6 text-right">200,000</td><td class="py-3 px-6 text-right">210,000</td><td class="py-3 px-6 text-right">240,000</td><td class="py-3 px-6 text-right">270,000</td><td class="py-3 px-6 text-right">320,000</td><td class="py-3 px-6 text-right">380,000</td></tr>
-                                    <tr class="font-semibold bg-gray-50"><td class="py-3 px-6 text-left">売上総利益</td><td class="py-3 px-6 text-right">550,000</td><td class="py-3 px-6 text-right">590,000</td><td class="py-3 px-6 text-right">660,000</td><td class="py-3 px-6 text-right">730,000</td><td class="py-3 px-6 text-right">880,000</td><td class="py-3 px-6 text-right">1,020,000</td></tr>
-                                    <tr><td class="py-3 px-6 text-left">販売費及び一般管理費</td><td class="py-3 px-6 text-right">300,000</td><td class="py-3 px-6 text-right">310,000</td><td class="py-3 px-6 text-right">320,000</td><td class="py-3 px-6 text-right">330,000</td><td class="py-3 px-6 text-right">340,000</td><td class="py-3 px-6 text-right">350,000</td></tr>
-                                    <tr class="font-semibold bg-gray-50"><td class="py-3 px-6 text-left">営業利益</td><td class="py-3 px-6 text-right">250,000</td><td class="py-3 px-6 text-right">280,000</td><td class="py-3 px-6 text-right">340,000</td><td class="py-3 px-6 text-right">400,000</td><td class="py-3 px-6 text-right">540,000</td><td class="py-3 px-6 text-right">670,000</td></tr>
-                                    <tr><td class="py-3 px-6 text-left">経常利益</td><td class="py-3 px-6 text-right">240,000</td><td class="py-3 px-6 text-right">270,000</td><td class="py-3 px-6 text-right">330,000</td><td class="py-3 px-6 text-right">390,000</td><td class="py-3 px-6 text-right">530,000</td><td class="py-3 px-6 text-right">660,000</td></tr>
-                                    <tr class="font-semibold bg-gray-50"><td class="py-3 px-6 text-left">当期純利益</td><td class="py-3 px-6 text-right">200,000</td><td class="py-3 px-6 text-right">220,000</td><td class="py-3 px-6 text-right">280,000</td><td class="py-3 px-6 text-right">320,000</td><td class="py-3 px-6 text-right">450,000</td><td class="py-3 px-6 text-right">500,000</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="monthly-bs" class="monthly-tab-pane hidden">
-                            <table class="min-w-full bg-white border border-gray-200 rounded-md">
-                                <thead>
-                                    <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
-                                        <th class="py-3 px-6 text-left">項目</th>
-                                        <th class="py-3 px-6 text-right">10月</th>
-                                        <th class="py-3 px-6 text-right">11月</th>
-                                        <th class="py-3 px-6 text-right">12月</th>
-                                        <th class="py-3 px-6 text-right">1月</th>
-                                        <th class="py-3 px-6 text-right">2月</th>
-                                        <th class="py-3 px-6 text-right">3月</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-gray-700 text-sm">
-                                    <tr class="font-semibold"><td class="py-3 px-6 text-left">【資産の部】</td><td colspan="6"></td></tr>
-                                    <tr><td class="py-3 px-6 text-left">現金預金</td><td class="py-3 px-6 text-right">1,200,000</td><td class="py-3 px-6 text-right">1,250,000</td><td class="py-3 px-6 text-right">1,350,000</td><td class="py-3 px-6 text-right">1,450,000</td><td class="py-3 px-6 text-right">1,600,000</td><td class="py-3 px-6 text-right">1,800,000</td></tr>
-                                    <tr><td class="py-3 px-6 text-left">売掛金</td><td class="py-3 px-6 text-right">900,000</td><td class="py-3 px-6 text-right">950,000</td><td class="py-3 px-6 text-right">1,000,000</td><td class="py-3 px-6 text-right">1,100,000</td><td class="py-3 px-6 text-right">1,200,000</td><td class="py-3 px-6 text-right">1,087,746</td></tr>
-                                    <tr><td class="py-3 px-6 text-left">商品</td><td class="py-3 px-6 text-right">600,000</td><td class="py-3 px-6 text-right">620,000</td><td class="py-3 px-6 text-right">650,000</td><td class="py-3 px-6 text-right">680,000</td><td class="py-3 px-6 text-right">700,000</td><td class="py-3 px-6 text-right">698,500</td></tr>
-                                    <tr><td class="py-3 px-6 text-left">固定資産</td><td class="py-3 px-6 text-right">499,620</td><td class="py-3 px-6 text-right">499,620</td><td class="py-3 px-6 text-right">499,620</td><td class="py-3 px-6 text-right">499,620</td><td class="py-3 px-6 text-right">499,620</td><td class="py-3 px-6 text-right">499,620</td></tr>
-                                    <tr class="font-semibold"><td class="py-3 px-6 text-left">【負債の部】</td><td colspan="6"></td></tr>
-                                    <tr><td class="py-3 px-6 text-left">買掛金</td><td class="py-3 px-6 text-right">350,000</td><td class="py-3 px-6 text-right">360,000</td><td class="py-3 px-6 text-right">370,000</td><td class="py-3 px-6 text-right">380,000</td><td class="py-3 px-6 text-right">390,000</td><td class="py-3 px-6 text-right">390,974</td></tr>
-                                    <tr><td class="py-3 px-6 text-left">未払金</td><td class="py-3 px-6 text-right">120,000</td><td class="py-3 px-6 text-right">125,000</td><td class="py-3 px-6 text-right">130,000</td><td class="py-3 px-6 text-right">132,000</td><td class="py-3 px-6 text-right">134,000</td><td class="py-3 px-6 text-right">133,044</td></tr>
-                                    <tr><td class="py-3 px-6 text-left">長期借入金</td><td class="py-3 px-6 text-right">2,805,000</td><td class="py-3 px-6 text-right">2,805,000</td><td class="py-3 px-6 text-right">2,805,000</td><td class="py-3 px-6 text-right">2,805,000</td><td class="py-3 px-6 text-right">2,805,000</td><td class="py-3 px-6 text-right">2,805,000</td></tr>
-                                    <tr><td class="py-3 px-6 text-left">役員借入金</td><td class="py-3 px-6 text-right">1,300,000</td><td class="py-3 px-6 text-right">1,310,000</td><td class="py-3 px-6 text-right">1,320,000</td><td class="py-3 px-6 text-right">1,330,000</td><td class="py-3 px-6 text-right">1,340,000</td><td class="py-3 px-6 text-right">1,349,922</td></tr>
-                                    <tr class="font-semibold"><td class="py-3 px-6 text-left">【純資産の部】</td><td colspan="6"></td></tr>
-                                    <tr><td class="py-3 px-6 text-left">繰越利益剰余金</td><td class="py-3 px-6 text-right">-2,324,030</td><td class="py-3 px-6 text-right">-2,124,030</td><td class="py-3 px-6 text-right">-1,904,030</td><td class="py-3 px-6 text-right">-1,624,030</td><td class="py-3 px-6 text-right">-1,304,030</td><td class="py-3 px-6 text-right">-1,777,860</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="monthly-cf" class="monthly-tab-pane hidden">
-                            <table class="min-w-full bg-white border border-gray-200 rounded-md">
-                                <thead>
-                                    <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
-                                        <th class="py-3 px-6 text-left">項目</th>
-                                        <th class="py-3 px-6 text-right">10月</th>
-                                        <th class="py-3 px-6 text-right">11月</th>
-                                        <th class="py-3 px-6 text-right">12月</th>
-                                        <th class="py-3 px-6 text-right">1月</th>
-                                        <th class="py-3 px-6 text-right">2月</th>
-                                        <th class="py-3 px-6 text-right">3月</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-gray-700 text-sm">
-                                    <tr><td class="py-3 px-6 text-left font-semibold">営業活動によるCF</td><td class="py-3 px-6 text-right">200,000</td><td class="py-3 px-6 text-right">250,000</td><td class="py-3 px-6 text-right">300,000</td><td class="py-3 px-6 text-right">350,000</td><td class="py-3 px-6 text-right">400,000</td><td class="py-3 px-6 text-right">450,000</td></tr>
-                                    <tr><td class="py-3 px-6 text-left">投資活動によるCF</td><td class="py-3 px-6 text-right">0</td><td class="py-3 px-6 text-right">0</td><td class="py-3 px-6 text-right">0</td><td class="py-3 px-6 text-right">0</td><td class="py-3 px-6 text-right">0</td><td class="py-3 px-6 text-right">0</td></tr>
-                                    <tr><td class="py-3 px-6 text-left">財務活動によるCF</td><td class="py-3 px-6 text-right">-50,000</td><td class="py-3 px-6 text-right">-50,000</td><td class="py-3 px-6 text-right">-50,000</td><td class="py-3 px-6 text-right">-50,000</td><td class="py-3 px-6 text-right">-50,000</td><td class="py-3 px-6 text-right">-50,000</td></tr>
-                                    <tr class="font-semibold bg-gray-50"><td class="py-3 px-6 text-left">月次純CF</td><td class="py-3 px-6 text-right">150,000</td><td class="py-3 px-6 text-right">200,000</td><td class="py-3 px-6 text-right">250,000</td><td class="py-3 px-6 text-right">300,000</td><td class="py-3 px-6 text-right">350,000</td><td class="py-3 px-6 text-right">400,000</td></tr>
-                                    <tr><td class="py-3 px-6 text-left">期末現金残高</td><td class="py-3 px-6 text-right">1,200,000</td><td class="py-3 px-6 text-right">1,350,000</td><td class="py-3 px-6 text-right">1,550,000</td><td class="py-3 px-6 text-right">1,800,000</td><td class="py-3 px-6 text-right">2,100,000</td><td class="py-3 px-6 text-right">2,450,000</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
-    </main>
-	
-	<section id="strengths" class="py-16 md:py-24 bg-white">
+
+        <section id="strengths" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h3 class="text-3xl font-bold text-gray-800">TENPLUS SENの競争優位性</h3>
@@ -294,6 +201,12 @@
         </section>
     </main>
 
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 TENPLUS SEN G.K. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">この資料は投資勧誘を目的としたものであり、将来の成果を保証するものではありません。</p>
+        </div>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -421,208 +334,6 @@
                     tab.classList.remove('text-gray-500');
 
                     panes.forEach(pane => {
-                        pane.classList.add('hidden');
-                    });
-                    document.getElementById(tab.dataset.tab).classList.remove('hidden');
-                });
-            });
-            
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-    </script>
-
-
-    <section id="appendix" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold text-gray-800">補足資料 (Appendix)</h3>
-                <p class="text-gray-600 mt-2">詳細な法的・補足資料はこちらからご確認ください。</p>
-            </div>
-            <div class="max-w-xl mx-auto bg-[#FDFBF7] p-8 rounded-2xl shadow-md space-y-4 text-center">
-                <p class="text-lg text-gray-700">
-                    <a href="https://drive.google.com/drive/folders/1JdHJYaz_4qvUg1Oj34ShQx2g2Rt-E8dc?usp=sharing" target="_blank" class="text-blue-600 hover:text-blue-800 underline">会社謄本 (登記簿謄本)</a>
-                </p>
-                <p class="text-lg text-gray-700">
-                    <a href="https://drive.google.com/drive/folders/1Gkxhwh_ogu85zS6o4mYxvtHL66Qw9m7I?usp=sharing" target="_blank" class="text-blue-600 hover:text-blue-800 underline">定款 (会社設立時の定款)</a>
-                </p>
-                <p class="text-lg text-gray-700">
-                    <a href="https://drive.google.com/drive/folders/1nU741gVrQiZW9UnWeJyeYdVHEVdnPRF3?usp=sharing" target="_blank" class="text-blue-600 hover:text-blue-800 underline">代表者ポートフォリオ・職務経歴書・履歴書</a>
-                </p>
-                <p class="text-lg text-gray-700">
-                    <a href="https://docs.google.com/presentation/d/11R2ynWDFaYawGkIQoyEAYfxV6vIxCw64/edit?usp=sharing&ouid=107864633266504531246&rtpof=true&sd=true" target="_blank" class="text-blue-600 hover:text-blue-800 underline">会社概要</a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 TENPLUS SEN G.K. All Rights Reserved.</p>
-            <p class="text-sm text-gray-400 mt-2">この資料は投資勧誘を目的としたものであり、将来の成果を保証するものではありません。</p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const financialData = {
-                labels: ['第1期 (〜R5.3)', '第2期 (〜R6.3)', '第3期 (〜R7.3)'],
-                sales: [1465859, 6248355, 4458133],
-                netProfit: [-2008162, -315868, 546170]
-            };
-
-            const financialsCanvas = document.getElementById('financialsChart');
-            if (financialsCanvas) {
-                const financialsCtx = financialsCanvas.getContext('2d');
-                new Chart(financialsCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: financialData.labels,
-                        datasets: [{
-                            label: '売上高',
-                            data: financialData.sales,
-                            backgroundColor: 'rgba(192, 160, 128, 0.6)',
-                            borderColor: 'rgba(192, 160, 128, 1)',
-                            borderWidth: 1,
-                            yAxisID: 'y'
-                        }, {
-                            label: '当期純利益',
-                            data: financialData.netProfit,
-                            type: 'line',
-                            borderColor: '#8B4513',
-                            backgroundColor: '#8B4513',
-                            tension: 0.1,
-                            yAxisID: 'y1'
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                position: 'left',
-                                title: { display: true, text: '売上高 (円)' }
-                            },
-                            y1: {
-                                beginAtZero: false,
-                                position: 'right',
-                                title: { display: true, text: '当期純利益 (円)' },
-                                grid: { drawOnChartArea: false }
-                            }
-                        },
-                        plugins: {
-                            tooltip: {
-                                callbacks: {
-                                    label: function(context) {
-                                        let label = context.dataset.label || '';
-                                        if (label) {
-                                            label += ': ';
-                                        }
-                                        if (context.parsed.y !== null) {
-                                            label += new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(context.parsed.y);
-                                        }
-                                        return label;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
-            }
-
-
-            const useOfFundsData = {
-                labels: ['運転資金・財務強化', 'マーケティング', '商品開発・在庫', 'IT・システム'],
-                data: [10000000, 5000000, 3000000, 2000000]
-            };
-
-            const useOfFundsCanvas = document.getElementById('useOfFundsChart');
-            if (useOfFundsCanvas) {
-                const useOfFundsCtx = useOfFundsCanvas.getContext('2d');
-                new Chart(useOfFundsCtx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: useOfFundsData.labels,
-                        datasets: [{
-                            label: '資金使途',
-                            data: useOfFundsData.data,
-                            backgroundColor: [
-                                '#FFD700', // 運転資金・財務強化 (暖色: ゴールド)
-                                '#FF6347', // マーケティング (暖色: トマト)
-                                '#4682B4', // 商品開発・在庫 (寒色: スチールブルー)
-                                '#1E90FF'  // IT・システム (寒色: ドジャーブルー)
-                            ],
-                            borderColor: '#FDFBF7',
-                            borderWidth: 2
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { position: 'bottom' },
-                            tooltip: {
-                                callbacks: {
-                                    label: function(context) {
-                                        let label = context.label || '';
-                                        if (label) {
-                                            label += ': ';
-                                        }
-                                        if (context.parsed !== null) {
-                                            const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
-                                            const percentage = ((context.parsed / total) * 100).toFixed(2) + '%';
-                                            label += new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(context.parsed) + ` (${percentage})`;
-                                        }
-                                        return label;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
-            }
-
-
-            const tabs = document.querySelectorAll('.tab-btn');
-            const panes = document.querySelectorAll('.tab-pane');
-
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    tabs.forEach(item => {
-                        item.classList.remove('active');
-                        item.classList.add('text-gray-500');
-                    });
-                    tab.classList.add('active');
-                    tab.classList.remove('text-gray-500');
-
-                    panes.forEach(pane => {
-                        pane.classList.add('hidden');
-                    });
-                    document.getElementById(tab.dataset.tab).classList.remove('hidden');
-                });
-            });
-
-            // Monthly financials tabs logic
-            const monthlyTabs = document.querySelectorAll('.monthly-tab-btn');
-            const monthlyPanes = document.querySelectorAll('.monthly-tab-pane');
-
-            monthlyTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    monthlyTabs.forEach(item => {
-                        item.classList.remove('active');
-                        item.classList.add('text-gray-500');
-                    });
-                    tab.classList.add('active');
-                    tab.classList.remove('text-gray-500');
-
-                    monthlyPanes.forEach(pane => {
                         pane.classList.add('hidden');
                     });
                     document.getElementById(tab.dataset.tab).classList.remove('hidden');
